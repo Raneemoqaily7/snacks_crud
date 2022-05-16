@@ -4,12 +4,17 @@ from django.views.generic import (
                                     CreateView,
                                     UpdateView,
                                     DeleteView,
-                                    DetailView
+                                    DetailView,
+                                    TemplateView
                                 )
 from .models import Snack 
 
 # Create your views here.
+class HomeView(TemplateView):
+    template_name= 'home.html'
+    model =Snack
 
+    
 class SnackListView(ListView):
     template_name= 'snacks_list.html'
     model =Snack
